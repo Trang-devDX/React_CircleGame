@@ -111,7 +111,7 @@ export default function CircleGame() {
           {autoPlay ? "Auto Play OFF" : "Auto Play ON"}
         </button>
       </div>
-      <div className="relative w-[800px] h-[400px] border bg-gray-100">
+      <div className="relative w-[1200px] h-[400px] border bg-gray-100">
         {circles.map((circle) => (
           <div
             key={circle.id}
