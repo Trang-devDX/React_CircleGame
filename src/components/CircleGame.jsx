@@ -11,18 +11,18 @@ export default function CircleGame() {
   const [status, setStatus] = useState("LET'S PLAY");
 
   useEffect(() => {
-    let timer; 
+    let timer;
     if (isPlaying) {
       timer = setInterval(() => {
-        setTime((previousTime) => previousTime + 1);
-      }, 1000);
+        setTime((previousTime) => parseFloat((previousTime + 0.1).toFixed(1)));
+      }, 100);
     }
     return () => {
       if (timer) {
         clearInterval(timer);
       }
     };
-  }, [isPlaying]); 
+  }, [isPlaying]);
 
   const handleCircleClick = useCallback(
     (id) => {
@@ -93,7 +93,10 @@ export default function CircleGame() {
         onChange={(e) => setInputValue(e.target.value)}
         // disabled={isPlaying}
       />
-      <div className="text-xl">Time: {time}s</div>
+      <div className="text-xl">
+        Time:{" "}
+        <span className="inline-block min-w-[50px] text-center">{time}s</span>
+      </div>
       <div className="flex space-x-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded"
