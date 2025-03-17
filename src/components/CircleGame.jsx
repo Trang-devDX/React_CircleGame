@@ -61,8 +61,8 @@ export default function CircleGame() {
     setCircles(
       Array.from({ length: num }, (_, i) => ({
         id: i + 1,
-        left: Math.random() * 80 + "%",
-        top: Math.random() * 80 + "%",
+        left: Math.random() * 100 + "%",
+        top: Math.random() * 100 + "%",
       }))
     );
     setCount(num);
